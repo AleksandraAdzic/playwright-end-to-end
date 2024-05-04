@@ -2,6 +2,8 @@ const { logInPage } = require("./logInPage");
 const { userLoggedInPage } = require("./userLoggedInPage");
 const { cartItemPage } = require("./cartItemPage");
 const { checkoutInformationPage } = require("./checkoutInformationPage");
+const { checkoutOverviewPage } = require("./checkoutOverviewPage");
+const { finishPage } = require("./finishPage");
 
 class POManager {
   constructor(page) {
@@ -10,6 +12,16 @@ class POManager {
     this.userLoggedInPage = new userLoggedInPage(page);
     this.cartItemPage = new cartItemPage(page);
     this.checkoutInformationPage = new checkoutInformationPage(page);
+    this.checkoutOverviewPage = new checkoutOverviewPage(page);
+    this.finishPage = new finishPage(page);
+  }
+
+  getFinishPage() {
+    return this.finishPage;
+  }
+
+  getCheckoutOverviewPage() {
+    return this.checkoutOverviewPage;
   }
 
   getCheckoutInformationPage() {
